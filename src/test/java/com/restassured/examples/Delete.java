@@ -34,6 +34,24 @@ public class Delete {
 
         System.out.println(response_2.getStatusCode());
 
+        RestAssured
+                .given()
+                .baseUri("https://api.restful-api.dev/objects")
+                .pathParam("id",7)
+                .get("/{id}").prettyPrint();
+
+
+        Data data = RestAssured
+                .given()
+                .baseUri("https://run.mocky.io/v3/855cbb54-9612-41da-be2a-9354c8c62aa9")
+                .get().jsonPath().getObject("data", Data.class);
+
+        System.out.println(data.getId());
+
+
+
+
+
 
 
 
@@ -41,6 +59,8 @@ public class Delete {
 
 
     }
+
+
 
 
 
